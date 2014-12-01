@@ -5,6 +5,7 @@ class Sample
     puts "hello,statement1"
     #statement2
     puts "hello,statement2"
-		#statement3
-		puts "hello"
+    #statement3
+    puts "hello"
+  end
 end
