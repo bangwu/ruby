@@ -1,5 +1,5 @@
 #!/usr/bin/ruby
-class Sample
+#class Sample
   def hello
     #statement1
     puts "hello,statement1"
@@ -8,4 +8,9 @@ class Sample
     #statement3
     puts "hello"
   end
-end
+#end
+
+#object sample=Sample.new
+hello
+
+
