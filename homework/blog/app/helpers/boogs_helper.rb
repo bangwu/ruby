@@ -1,0 +1,2 @@
+module BoogsHelper
+end
