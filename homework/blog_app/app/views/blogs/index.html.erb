@@ -1,8 +1,20 @@
+<h1>Listing articles</h1>
+ 
+<table>
+    <tr>
+    <th>id</th>
+    <th>Title</th>
+    <th>Text</th>
+    <th>edit</h1>
+    <th>delete</h1>
+  </tr>
 <% @blogs.each do |blog| %>
-  <%= blog.id%>
-  <%= blog.title %>
-  <%= blog.content %>
-  <%= link_to "edit", edit_blog_path(blog) %>
-  <%= link_to "delete", blog_path(blog), method: :delete %></br>
+  <tr><td><%= blog.id%></td>
+<td><%= blog.title %></td>
+<td><%= blog.content %></td>
+<td><%= link_to "edit", edit_blog_path(blog) %></td>
+<td><%= link_to "delete", blog_path(blog), method: :delete %></td>
+  </tr>
 <% end %>
+</table>
 <%= link_to "new", new_blog_path %>
