@@ -1,5 +1,13 @@
-<%= form_for @blog do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :content %>
+<%=form_for @blog do |f| %>
+  <table>
+    <tr>
+       <td>title:</td>
+       <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+       <td>content:</td>
+       <td><%= f.text_area :content %></td>
+    </tr>
+  </table>
   <%= f.submit "update" %>
 <% end %>

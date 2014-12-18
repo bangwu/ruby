@@ -1,20 +1,22 @@
 <h1>Listing articles</h1>
  
+<%= link_to "new", new_blog_path %>
+<%= link_to "search", new_blog_path %>
 <table>
     <tr>
-    <th>id</th>
-    <th>Title</th>
-    <th>Text</th>
-    <th>edit</h1>
-    <th>delete</h1>
+      <th>id</th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>edit</th>
+      <th>delete</th>
   </tr>
-<% @blogs.each do |blog| %>
-  <tr><td><%= blog.id%></td>
-<td><%= blog.title %></td>
-<td><%= blog.content %></td>
-<td><%= link_to "edit", edit_blog_path(blog) %></td>
-<td><%= link_to "delete", blog_path(blog), method: :delete %></td>
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.id%></td>
+      <td><%= link_to  blog.title, blog_path(blog) %></td>
+      <td><%= blog.content %></td>
+      <td><%= link_to "edit", edit_blog_path(blog) %></td>
+      <td><%= link_to "delete", blog_path(blog),method: :delete,data: {confirm: 'Are you sure to delete'} %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to "new", new_blog_path %>

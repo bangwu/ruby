@@ -15,8 +15,11 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.save
-    respond_with(@blog)
+    if @blog.save
+      redirect_to @blog
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -29,11 +32,12 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @newblog = Blog.new(blog_params)
-    @blog.title=@newblog.title
-    @blog.content=@newblog.content
-    @blog.save
-    redirect_to(blogs_path)
+    if @blog.update(blog_params)
+      redirect_to @blog
+    else
+      render 'edit'
+    end
+    #redirect_to(blogs_path)
   end
 
   private
