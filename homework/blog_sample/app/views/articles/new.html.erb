@@ -1,0 +1,14 @@
+<h1>New Title</h1>
+<%= form_for @article do |f|%>
+<table>
+  <tr>
+    <td>title:</td>
+    <td><%= f.text_field :title%></td>
+  </tr>
+  <tr>
+    <td>text:</td>
+    <td><%= f.text_field :text%></td>
+  </tr>
+</table>
+<%= f.submit "new"%>
+<% end %>
