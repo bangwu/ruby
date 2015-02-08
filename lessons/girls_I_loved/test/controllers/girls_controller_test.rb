@@ -16,13 +16,6 @@ class GirlsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create girl" do
-    assert_difference('Girl.count') do
-      post :create, girl: { name: @girl.name, number: @girl.number }
-    end
-
-    assert_redirected_to girl_path(assigns(:girl))
-  end
 
   test "should show girl" do
     get :show, id: @girl
@@ -36,14 +29,6 @@ class GirlsControllerTest < ActionController::TestCase
 
   test "should update girl" do
     patch :update, id: @girl, girl: { name: @girl.name, number: @girl.number }
-    assert_redirected_to girl_path(assigns(:girl))
   end
 
-  test "should destroy girl" do
-    assert_difference('Girl.count', -1) do
-      delete :destroy, id: @girl
-    end
-
-    assert_redirected_to girls_path
-  end
 end
